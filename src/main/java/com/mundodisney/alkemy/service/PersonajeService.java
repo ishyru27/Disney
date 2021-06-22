@@ -17,22 +17,31 @@ public class PersonajeService implements IPersonajeService{
 
     @Override
     public List<Personaje> listar() {
-         return (List<Personaje>) data.findAll();
+         return (List<Personaje>) data.findAll(); 
     }
 
     @Override
     public Optional<Personaje> listarId(int id_personaje) {
-        return data.findById(id_personaje);
+         return data.findById(id_personaje); 
     }
 
     @Override
     public int save(Personaje p) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int res=0;
+       Personaje personaje=data.save(p);
+        if (!personaje.equals(null)) {
+            res=1;
+        }
+        return res; 
     }
 
     @Override
     public void delete(int id_personaje) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException("Not supported yet."); 
     }
+    
+    
+
+
   
 }

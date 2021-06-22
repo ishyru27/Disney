@@ -1,12 +1,15 @@
 
 package com.mundodisney.alkemy.modelo;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -22,25 +25,26 @@ public class Personaje {
     private String edad;
     private String peso;
     private String historia;
+    
+    @OneToOne(cascade={CascadeType.ALL})
+    @JoinColumn(name="id_pelicula")
+    private Pelicula pelicula;
 
     public Personaje() {
     }
 
-    public Personaje(int id_personaje, byte[] imagen, String nombre, String edad, String peso, String historia) {
+    public Personaje(byte[] imagen, String nombre, String edad, String peso, String historia, Pelicula pelicula) {
         this.id_personaje = id_personaje;
         this.imagen = imagen;
         this.nombre = nombre;
         this.edad = edad;
         this.peso = peso;
         this.historia = historia;
+        this.pelicula = pelicula;
     }
 
     public int getId_personaje() {
         return id_personaje;
-    }
-
-    public void setId_personaje(int id_personaje) {
-        this.id_personaje = id_personaje;
     }
 
     public byte[] getImagen() {
@@ -83,14 +87,20 @@ public class Personaje {
         this.historia = historia;
     }
 
-    @Override
-    public String toString() {
-        return "Personaje{" + "id_personaje=" + id_personaje + ", imagen=" + imagen + ", nombre=" + nombre + ", edad=" + edad + ", peso=" + peso + ", historia=" + historia + '}';
+    public Pelicula getPelicula() {
+        return pelicula;
     }
 
-   
-    
-    
+    public void setPelicula(Pelicula pelicula) {
+        this.pelicula = pelicula;
+    }
+
+    @Override
+    public String toString() {
+        return "Personaje{" + "id_personaje=" + id_personaje + ", imagen=" + imagen + ", nombre=" + nombre + ", edad=" + edad + ", peso=" + peso + ", historia=" + historia + ", pelicula=" + pelicula + '}';
+    }
+
+     
     
     
 }

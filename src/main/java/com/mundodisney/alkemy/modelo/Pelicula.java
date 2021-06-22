@@ -2,6 +2,7 @@
 package com.mundodisney.alkemy.modelo;
 
 import java.util.Date;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,30 +17,26 @@ public class Pelicula {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private int id_pelicula;
     @Lob
     private byte[] imagen;
     private String titulo;
-    private Date fecha;
+    private Date fechaCreacion;
     private String calificacion;
 
     public Pelicula() {
     }
 
-    public Pelicula(byte[] imagen, String titulo, Date fecha, String calificacion) {
-        this.id = id;
+    public Pelicula(byte[] imagen, String titulo, Date fechaCreacion, String calificacion) {
+        this.id_pelicula = id_pelicula;
         this.imagen = imagen;
         this.titulo = titulo;
-        this.fecha = fecha;
+        this.fechaCreacion = fechaCreacion;
         this.calificacion = calificacion;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
+    public int getId_pelicula() {
+        return id_pelicula;
     }
 
     public byte[] getImagen() {
@@ -58,12 +55,12 @@ public class Pelicula {
         this.titulo = titulo;
     }
 
-    public Date getFecha() {
-        return fecha;
+    public Date getFechaCreacion() {
+        return fechaCreacion;
     }
 
-    public void setFecha(Date fecha) {
-        this.fecha = fecha;
+    public void setFechaCreacion(Date fechaCreacion) {
+        this.fechaCreacion = fechaCreacion;
     }
 
     public String getCalificacion() {
@@ -76,9 +73,12 @@ public class Pelicula {
 
     @Override
     public String toString() {
-        return "Pelicula{" + "id=" + id + ", imagen=" + imagen + ", titulo=" + titulo + ", fecha=" + fecha + ", calificacion=" + calificacion + '}';
+        return "Pelicula{" + "id_pelicula=" + id_pelicula + ", imagen=" + imagen + ", titulo=" + titulo + ", fechaCreacion=" + fechaCreacion + ", calificacion=" + calificacion + '}';
     }
+   
     
     
+
+   
     
 }
