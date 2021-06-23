@@ -37,7 +37,7 @@ public class PersonajeService implements IPersonajeService{
 
     @Override
     public void delete(int id_personaje) {
-        throw new UnsupportedOperationException("Not supported yet."); 
+        data.deleteById(id_personaje);; 
     }
     
     
