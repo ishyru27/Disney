@@ -1,5 +1,5 @@
 
-package com.mundodisney.alkemy.InterfaceServive;
+package com.mundodisney.alkemy.InterfaceService;
 import com.mundodisney.alkemy.modelo.Personaje;
 import java.util.List;
 import java.util.Optional;

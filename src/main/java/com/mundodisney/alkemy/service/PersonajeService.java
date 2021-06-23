@@ -2,7 +2,7 @@
 package com.mundodisney.alkemy.service;
 
 import com.mundodisney.alkemy.interfaces.IPersonaje;
-import com.mundodisney.alkemy.InterfaceServive.IPersonajeService;
+import com.mundodisney.alkemy.InterfaceService.IPersonajeService;
 import com.mundodisney.alkemy.modelo.Personaje;
 import java.util.List;
 import java.util.Optional;
@@ -37,7 +37,7 @@ public class PersonajeService implements IPersonajeService{
 
     @Override
     public void delete(int id_personaje) {
-        data.deleteById(id_personaje);; 
+        data.deleteById(id_personaje);
     }
     
     

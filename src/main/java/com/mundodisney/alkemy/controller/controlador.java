@@ -2,7 +2,7 @@
 package com.mundodisney.alkemy.controller;
 
 
-import com.mundodisney.alkemy.InterfaceServive.IPersonajeService;
+import com.mundodisney.alkemy.InterfaceService.IPersonajeService;
 import com.mundodisney.alkemy.modelo.Personaje;
 import java.util.List;
 import java.util.Optional;
